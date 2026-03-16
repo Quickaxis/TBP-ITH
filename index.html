@@ -593,6 +593,70 @@ footer{background:#020504;padding:80px 24px 40px;border-top:1px solid rgba(197, 
 }
 .btn-whatsapp .btn-icon { background: rgba(255,255,255,0.18); }
 .btn-call .btn-icon { background: rgba(255,255,255,0.10); }
+
+.room-carousel {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background: #eae3d6;
+}
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.carousel-track img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.2s;
+  line-height: 1;
+  padding: 0;
+}
+.carousel-btn:hover { background: rgba(0,0,0,0.6); }
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
+.carousel-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 2;
+}
+.cdot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  transition: background 0.25s, transform 0.25s;
+  cursor: pointer;
+}
+.cdot.active {
+  background: #fff;
+  transform: scale(1.3);
+}
 </style>
 </head>
 <body>
@@ -800,7 +864,22 @@ footer{background:#020504;padding:80px 24px 40px;border-top:1px solid rgba(197, 
       </div>
       <div class="rooms-grid">
         <div class="room-card">
-          <img src="imgs/olive_1.jpeg" alt="Olive &amp; Orchid" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <div class="room-carousel" id="carousel-olive">
+            <div class="carousel-track">
+              <img src="imgs/olive_1.jpeg" alt="Olive & Orchid">
+              <img src="imgs/olive_2.jpeg" alt="Olive & Orchid">
+              <img src="imgs/olive_3.jpeg" alt="Olive & Orchid">
+              <img src="imgs/olive_4.jpeg" alt="Olive & Orchid">
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="carouselNav('carousel-olive',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" onclick="carouselNav('carousel-olive',1)">&#8250;</button>
+            <div class="carousel-dots" id="dots-carousel-olive">
+              <span class="cdot active" onclick="carouselGoto('carousel-olive',0)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-olive',1)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-olive',2)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-olive',3)"></span>
+            </div>
+          </div>
           <div class="room-card-body">
             <p class="room-card-type">Standard Room</p><h4 class="room-card-name">Olive &amp; Orchid</h4>
             <p class="room-card-desc">A warm room with double bed, red velvet lounge chairs, and earthy blue drapes. Clean kitchenette and private attached bath.</p>
@@ -808,7 +887,22 @@ footer{background:#020504;padding:80px 24px 40px;border-top:1px solid rgba(197, 
           </div>
         </div>
         <div class="room-card">
-          <img src="imgs/jasper_2.jpeg" alt="Jasper &amp; Juniper" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <div class="room-carousel" id="carousel-jasper">
+            <div class="carousel-track">
+              <img src="imgs/jasper_1.jpeg" alt="Jasper & Juniper">
+              <img src="imgs/jasper_2.jpeg" alt="Jasper & Juniper">
+              <img src="imgs/jasper_3.jpeg" alt="Jasper & Juniper">
+              <img src="imgs/jasper_4.jpeg" alt="Jasper & Juniper">
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="carouselNav('carousel-jasper',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" onclick="carouselNav('carousel-jasper',1)">&#8250;</button>
+            <div class="carousel-dots" id="dots-carousel-jasper">
+              <span class="cdot active" onclick="carouselGoto('carousel-jasper',0)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-jasper',1)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-jasper',2)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-jasper',3)"></span>
+            </div>
+          </div>
           <div class="room-card-body">
             <p class="room-card-type">Deluxe Room</p><h4 class="room-card-name">Jasper &amp; Juniper</h4>
             <p class="room-card-desc">Blue velvet drapes, a full-length arched mirror, warm pendant lighting, and a plush king bed. A room with personality and poise.</p>
@@ -816,7 +910,24 @@ footer{background:#020504;padding:80px 24px 40px;border-top:1px solid rgba(197, 
           </div>
         </div>
         <div class="room-card">
-          <img src="imgs/scarlet_1.jpeg" alt="Scarlet &amp; Sequoia" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <div class="room-carousel" id="carousel-scarlet">
+            <div class="carousel-track">
+              <img src="imgs/scarlet_1.jpeg" alt="Scarlet & Sequoia">
+              <img src="imgs/scarlet_2.jpeg" alt="Scarlet & Sequoia">
+              <img src="imgs/scarlet_3.jpeg" alt="Scarlet & Sequoia">
+              <img src="imgs/scarlet_4.jpeg" alt="Scarlet & Sequoia">
+              <img src="imgs/scarlet_5.jpeg" alt="Scarlet & Sequoia">
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="carouselNav('carousel-scarlet',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" onclick="carouselNav('carousel-scarlet',1)">&#8250;</button>
+            <div class="carousel-dots" id="dots-carousel-scarlet">
+              <span class="cdot active" onclick="carouselGoto('carousel-scarlet',0)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-scarlet',1)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-scarlet',2)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-scarlet',3)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-scarlet',4)"></span>
+            </div>
+          </div>
           <div class="room-card-body">
             <p class="room-card-type">Premium Room</p><h4 class="room-card-name">Scarlet &amp; Sequoia</h4>
             <p class="room-card-desc">Studio-style premium room with a large crimson sofa set, TV lounge, marble-finish wardrobe, and full-length mirror. Most spacious of the five.</p>
@@ -824,7 +935,24 @@ footer{background:#020504;padding:80px 24px 40px;border-top:1px solid rgba(197, 
           </div>
         </div>
         <div class="room-card">
-          <img src="imgs/maple_3.jpeg" alt="Maple &amp; Magnolia" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <div class="room-carousel" id="carousel-maple">
+            <div class="carousel-track">
+              <img src="imgs/maple_1.jpeg" alt="Maple & Magnolia">
+              <img src="imgs/maple_2.jpeg" alt="Maple & Magnolia">
+              <img src="imgs/maple_3.jpeg" alt="Maple & Magnolia">
+              <img src="imgs/maple_4.jpeg" alt="Maple & Magnolia">
+              <img src="imgs/maple_5.jpeg" alt="Maple & Magnolia">
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="carouselNav('carousel-maple',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" onclick="carouselNav('carousel-maple',1)">&#8250;</button>
+            <div class="carousel-dots" id="dots-carousel-maple">
+              <span class="cdot active" onclick="carouselGoto('carousel-maple',0)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-maple',1)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-maple',2)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-maple',3)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-maple',4)"></span>
+            </div>
+          </div>
           <div class="room-card-body">
             <p class="room-card-type">Premium Room</p><h4 class="room-card-name">Maple &amp; Magnolia</h4>
             <p class="room-card-desc">Richly decorated lounge-style room with blue drapes, warm lantern lighting, rattan décor, and a king bed. Charming details throughout.</p>
@@ -1135,6 +1263,26 @@ footer{background:#020504;padding:80px 24px 40px;border-top:1px solid rgba(197, 
 </div>
 
 <script>
+
+const carouselState = {};
+
+function carouselNav(id, dir) {
+  const el = document.getElementById(id);
+  const imgs = el.querySelectorAll('.carousel-track img');
+  const total = imgs.length;
+  if (carouselState[id] === undefined) carouselState[id] = 0;
+  carouselState[id] = (carouselState[id] + dir + total) % total;
+  el.querySelector('.carousel-track').style.transform = `translateX(-${carouselState[id] * 100}%)`;
+  el.querySelectorAll(`#dots-${id} .cdot`).forEach((d, i) => d.classList.toggle('active', i === carouselState[id]));
+}
+
+function carouselGoto(id, index) {
+  carouselState[id] = index;
+  const el = document.getElementById(id);
+  el.querySelector('.carousel-track').style.transform = `translateX(-${index * 100}%)`;
+  el.querySelectorAll(`#dots-${id} .cdot`).forEach((d, i) => d.classList.toggle('active', i === index));
+}
+
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60));
 
