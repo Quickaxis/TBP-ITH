@@ -408,16 +408,35 @@ section{padding:120px 24px;}
 .contact-desc{font-size:.95rem;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:48px;font-weight:300;max-width:400px;}
 .contact-btns{display:flex;flex-direction:column;gap:16px;width:100%;max-width:340px;}
 .btn-whatsapp{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,#1DA851 0%,#25D366 100%);color:#fff;border:none;border-radius:var(--r-md);padding:18px 28px;font-family:var(--font-body);font-size:.85rem;cursor:pointer;text-decoration:none;transition:all 0.4s var(--tr);font-weight:600;box-shadow:0 10px 30px rgba(29,168,81,0.25);}
-.btn-whatsapp .btn-icon{width:40px;height:40px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
-.btn-whatsapp .btn-text{display:flex;flex-direction:column;text-align:left;}
-.btn-whatsapp .btn-text b{font-weight:700;font-size:.9rem;}
-.btn-whatsapp .btn-text span{font-size:.7rem;opacity:.75;font-weight:400;margin-top:2px;}
+.btn-whatsapp .btn-icon,
+.btn-call .btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.btn-whatsapp .btn-icon {
+  background: rgba(255, 255, 255, 0.2);
+}
+.btn-call .btn-icon {
+  background: rgba(255, 255, 255, 0.1);
+}
+.btn-whatsapp .btn-text b,
+.btn-call .btn-text b {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.btn-whatsapp .btn-text span,
+.btn-call .btn-text span {
+  font-size: 0.70rem;
+  opacity: 0.75;
+  margin-top: 2px;
+  display: block;
+}
 .btn-whatsapp:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(29,168,81,0.35);}
-.btn-call{display:flex;align-items:center;gap:20px;background:rgba(255,255,255,.04);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:18px 28px;font-family:var(--font-body);font-size:.85rem;cursor:pointer;text-decoration:none;transition:all 0.4s var(--tr);font-weight:500;backdrop-filter:blur(10px);}
-.btn-call .btn-icon{width:40px;height:40px;background:rgba(255,255,255,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
-.btn-call .btn-text{display:flex;flex-direction:column;text-align:left;}
-.btn-call .btn-text b{font-weight:600;font-size:.9rem;}
-.btn-call .btn-text span{font-size:.7rem;opacity:.4;font-weight:400;margin-top:2px;}
 .btn-call:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);transform:translateY(-5px);}
 .contact-trust{display:flex;gap:24px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.05);flex-wrap:wrap;}
 .trust-item{display:flex;align-items:center;gap:10px;}
@@ -580,20 +599,7 @@ footer{background:#020504;padding:80px 24px 40px;border-top:1px solid rgba(197, 
   .gallery-tab, .rooms-tab { border-radius: var(--r-md); }
 }
 
-.btn-whatsapp .btn-icon,
-.btn-call .btn-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  font-size: 1.1rem;
-  color: #fff;
-}
-.btn-whatsapp .btn-icon { background: rgba(255,255,255,0.18); }
-.btn-call .btn-icon { background: rgba(255,255,255,0.10); }
+
 
 .room-carousel {
   position: relative;
@@ -1117,9 +1123,12 @@ footer{background:#020504;padding:80px 24px 40px;border-top:1px solid rgba(197, 
       <h2 class="contact-title">Reserve Your<br><em>Perfect Stay</em></h2>
       <p class="contact-desc">Reach out directly — we'll confirm availability, share more photos, and lock in your stay within minutes. No third-party fees.</p>
       <div class="contact-btns">
-        <a href="https://wa.me/916366367517?text=Hi!%20I'd%20like%20to%20enquire%20about%20a%20stay." target="_blank" class="btn-whatsapp">
+        <a href="https://wa.me/916366367517?text=Hi!%20I'd%20like%20to%20enquire%20about%20a%20stay." 
+           target="_blank" class="btn-whatsapp">
           <div class="btn-icon">
-            <i class="ph-fill ph-whatsapp-logo" style="font-size:1.2rem;"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="white">
+              <path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,103,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM151,176a72.08,72.08,0,0,1-72-72,24,24,0,0,1,19.29-23.54l12.89,25.78-9.7,14.55a8,8,0,0,0-.57,7.77,56.68,56.68,0,0,0,26.53,26.53,8,8,0,0,0,7.77-.57l14.55-9.7,25.78,12.89A24,24,0,0,1,151,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a88,88,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216l12.47-37.4a8,8,0,0,0-.67-6.54A88,88,0,1,1,128,216Z"/>
+            </svg>
           </div>
           <div class="btn-text">
             <b>WhatsApp Us</b>
@@ -1128,11 +1137,13 @@ footer{background:#020504;padding:80px 24px 40px;border-top:1px solid rgba(197, 
         </a>
         <a href="tel:+916366367517" class="btn-call">
           <div class="btn-icon">
-            <i class="ph-fill ph-phone-call" style="font-size:1.1rem;"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="white">
+              <path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.56l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.05,6.89,6.89,0,0,0,.74-.56L169.44,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/>
+            </svg>
           </div>
           <div class="btn-text">
             <b>Call Us Directly</b>
-            <span>Available 9 AM – 10 PM daily</span>
+            <span>+91 63663 67517</span>
           </div>
         </a>
       </div>
