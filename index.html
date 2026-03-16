@@ -496,25 +496,78 @@ footer{background:#020504;padding:80px 24px 40px;border-top:1px solid rgba(197, 
   .g4 .gp.big{grid-column:span 2;grid-row:span 1;}
   .g2{grid-auto-rows:145px;}
 }
-@media(max-width:768px){
-  .rooms-header{flex-direction:column;align-items:flex-start;margin-bottom:28px;}
-  .rooms-tabs{width:100%;}
-  .rooms-tab{flex:1;text-align:center;font-size:.68rem;padding:8px 6px;}
-  .gallery-tabs{width:100%;}
-  .gallery-tab{flex:1;text-align:center;font-size:.68rem;padding:9px 6px;}
-  .hero-props{flex-direction:column;align-items:center;}
-  .prop-card{min-width:unset;width:100%;max-width:360px;}
-  .footer-top{flex-direction:column;}
-  .footer-bottom{flex-direction:column;text-align:center;}
-  .g4{grid-template-columns:1fr 1fr;grid-auto-rows:125px;}
-  .g2{grid-template-columns:1fr 1fr;grid-auto-rows:125px;}
-  .gallery-sub-title{font-size:1.1rem;}
-  .property-section-header{padding:28px 28px 28px 34px;}
-  .ps-name{font-size:1.75rem;}
+@media (max-width: 768px) {
+  /* Navigation Fixes */
+  nav {
+    top: 10px;
+    width: calc(100% - 20px);
+    padding: 0 !important;
+    gap: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 100px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  .nav-logo, .nav-divider { display: none !important; }
+  .nav-links {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0;
+    flex-shrink: 0;
+    padding: 6px 8px;
+  }
+  .nav-links li {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 0.62rem;
+    padding: 7px 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.07em;
+  }
+  .nav-book {
+    padding: 8px 16px !important;
+    font-size: 0.62rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    margin-right: 6px !important;
+    margin-left: 2px !important;
+  }
+  .nav-book i { display: none !important; }
+
+  /* Hero & Section Fixes */
+  #hero { padding-top: 100px; }
+  .hero-title { font-size: clamp(2.8rem, 11vw, 4.5rem); }
+  .hero-props { grid-template-columns: 1fr; margin-top: 48px; }
+  .hero-actions { gap: 10px; }
+  .hero-cta, .hero-cta-ghost { padding: 14px 26px; font-size: 0.72rem; }
+  .units-grid, .props-grid { grid-template-columns: 1fr; }
+
+  /* Existing Responsive Logic */
+  .rooms-header { flex-direction: column; align-items: flex-start; margin-bottom: 28px; }
+  .rooms-tabs, .gallery-tabs { width: 100%; }
+  .rooms-tab, .gallery-tab { flex: 1; text-align: center; font-size: 0.68rem; padding: 8px 6px; }
+  .prop-card { min-width: unset; width: 100%; max-width: 360px; }
+  .footer-top, .footer-bottom { flex-direction: column; text-align: center; gap: 16px; }
+  .g4, .g2 { grid-template-columns: 1fr 1fr; grid-auto-rows: 125px; }
+  .gallery-sub-title { font-size: 1.1rem; }
+  .property-section-header { padding: 28px 28px 28px 34px; }
+  .ps-name { font-size: 1.75rem; }
 }
-@media(max-width:480px){
-  .gallery-tabs,.rooms-tabs{flex-direction:column;border-radius:var(--r-lg);}
-  .gallery-tab,.rooms-tab{border-radius:var(--r-md);}
+
+@media (max-width: 480px) {
+  .hero-cta, .hero-cta-ghost { width: 100%; justify-content: center; }
+  .hero-actions { flex-direction: column; width: 100%; }
+  .gallery-tabs, .rooms-tabs { flex-direction: column; border-radius: var(--r-lg); }
+  .gallery-tab, .rooms-tab { border-radius: var(--r-md); }
 }
 </style>
 </head>
