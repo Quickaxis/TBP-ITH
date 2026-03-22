@@ -937,7 +937,16 @@ section { padding: 160px 24px !important; }
 /* Make sure text within contact sections isn't overwritten by generic tag selectors */
 .contact-desc { color: #7A6F66 !important; }
 
-/* Bundle Banner Override (fixing existing inline styles that we don't want to touch in html) */
+/* IMAGE CROPPING & FOCUS */
+.carousel-track img, .room-card img, .unit-card img, .gp img, .prop-card img {
+  object-fit: cover !important;
+  object-position: center 45% !important;
+}
+.carousel-track img, .room-card img, .unit-card img {
+  height: 280px !important;
+}
+
+/* BUNDLE BANNER OVERRIDES */
 #section-better-place > div:nth-child(3) {
   background: #EAE0D5 !important;
   border-color: rgba(0,0,0,0.05) !important;
@@ -949,23 +958,10 @@ section { padding: 160px 24px !important; }
   color: #7A6F66 !important;
 }
 
-/* CAROUSEL & CARD IMAGE FIXES */
-.room-carousel, .room-card > img, .unit-card > div > img {
-  background-color: #F5EFE6 !important; /* Soft neutral background */
-  overflow: hidden !important;
-  display: block !important;
-  border-radius: 20px 20px 0 0 !important; /* Keep rounded corners on top */
-}
-.carousel-track img, .room-card > img, .unit-card > div > img {
-  object-fit: contain !important; /* Ensure full image is visible */
-  object-position: center center !important;
-  width: 100% !important;
-  height: 260px !important; /* Fixed height for consistency */
-  padding: 16px !important; /* Slight inner padding */
-  box-sizing: border-box !important;
-  background-color: #F5EFE6 !important;
-}
-
+</style>
+<style>
+/* Reset some specific inline-ish styles that might interfere */
+.unit-card img { height: 280px !important; }
 </style>
 </head>
 <body>
