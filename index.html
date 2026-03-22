@@ -884,15 +884,38 @@ nav.scrolled {
 
 /* MISC & ICONS */
 .divider { background: #C6A75E !important; }
-.btn-whatsapp { background: linear-gradient(135deg, #1DA851 0%, #25D366 100%) !important; box-shadow: 0 10px 30px rgba(29,168,81,0.2) !important; }
-.btn-whatsapp .btn-text b, .btn-whatsapp .btn-text span { color: #FFFFFF !important; }
 .c-cursor { background: #C6A75E !important; }
 .c-follower { border-color: #D4AF37 !important; }
-.btn-call { background: #FFFFFF !important; border: 1px solid rgba(0,0,0,0.1) !important; }
-.btn-call .btn-text b { color: #2B2B2B !important; }
-.btn-call .btn-text span { color: #7A6F66 !important; }
-.btn-call .btn-icon { background: #EAE0D5 !important; }
+
+/* SHARED BUTTONS (Contact) */
+.contact-btns { display: flex !important; flex-direction: column !important; gap: 16px !important; width: 100% !important; max-width: 340px !important; align-items: stretch !important; }
+.btn-whatsapp, .btn-call {
+  display: flex !important; align-items: center !important; gap: 16px !important; width: 100% !important; max-width: 340px !important;
+  padding: 14px 24px !important; border-radius: 20px !important; text-decoration: none !important; transition: all 0.4s ease !important;
+  min-height: 72px !important; box-sizing: border-box !important; justify-content: flex-start !important;
+}
+.btn-whatsapp:hover, .btn-call:hover { transform: translateY(-4px) !important; }
+.btn-whatsapp .btn-icon, .btn-call .btn-icon {
+  width: 44px !important; height: 44px !important; min-width: 44px !important; border-radius: 50% !important;
+  display: flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important;
+}
+.btn-whatsapp .btn-text, .btn-call .btn-text { display: flex !important; flex-direction: column !important; text-align: left !important; }
+.btn-whatsapp .btn-text b, .btn-call .btn-text b { font-family: 'DM Sans', sans-serif !important; font-size: 0.95rem !important; font-weight: 600 !important; line-height: 1.2 !important; margin-bottom: 2px !important; }
+.btn-whatsapp .btn-text span, .btn-call .btn-text span { font-family: 'DM Sans', sans-serif !important; font-size: 0.75rem !important; font-weight: 400 !important; }
+
+/* SPECIFIC BUTTONS (Contact) */
+.btn-whatsapp { background: linear-gradient(135deg, #1DA851 0%, #25D366 100%) !important; box-shadow: 0 10px 30px rgba(29, 168, 81, 0.25) !important; border: none !important; }
+.btn-whatsapp:hover { box-shadow: 0 15px 40px rgba(29, 168, 81, 0.35) !important; }
+.btn-whatsapp .btn-icon { background: rgba(255, 255, 255, 0.2) !important; }
+.btn-whatsapp .btn-text b, .btn-whatsapp .btn-text span { color: #FFFFFF !important; }
+.btn-whatsapp .btn-text span { opacity: 0.85 !important; }
+
+.btn-call { background: #FFFFFF !important; border: 1px solid #C6A75E !important; box-shadow: 0 10px 30px rgba(0,0,0,0.06) !important; }
+.btn-call:hover { box-shadow: 0 15px 40px rgba(198, 167, 94, 0.15) !important; border-color: #D4AF37 !important; }
+.btn-call .btn-icon { background: rgba(198, 167, 94, 0.1) !important; }
 .btn-call .btn-icon svg { fill: #C6A75E !important; }
+.btn-call .btn-text b { color: #2B2B2B !important; }
+.btn-call .btn-text span { color: #7A6F66 !important; opacity: 0.85 !important; }
 
 /* SPACING INCREASE */
 section { padding: 160px 24px !important; }
