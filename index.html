@@ -1045,6 +1045,47 @@ section { padding: 160px 24px !important; }
   opacity: 0.7 !important;
 }
 
+/* GENERAL BOOKING MODAL (Midtown style) */
+#generalModal .booking-modal {
+  max-width: 450px !important;
+}
+.booking-option-pill {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  padding: 16px 20px !important;
+  border-radius: 18px !important;
+  border: 1px solid #EAE0D5 !important;
+  text-decoration: none !important;
+  margin-bottom: 12px !important;
+  transition: all 0.3s ease !important;
+  background: #FFFFFF !important;
+}
+.booking-option-pill:hover {
+  background: #F5EFE6 !important;
+  transform: translateY(-2px) !important;
+  border-color: #C6A75E !important;
+}
+.b-opt-icon {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.2rem !important;
+  flex-shrink: 0 !important;
+}
+.wa-opt .b-opt-icon { background: #E8F8EF !important; color: #25D366 !important; }
+.call-opt .b-opt-icon { background: #F5EFE6 !important; color: #6B705C !important; }
+.urgent-opt .b-opt-icon { background: #FEF2F2 !important; color: #EF4444 !important; }
+
+.b-opt-details { text-align: left !important; flex: 1 !important; }
+.b-opt-title { display: block !important; font-size: 0.95rem !important; font-weight: 600 !important; color: #2B2B2B !important; margin-bottom: 2px !important; }
+.b-opt-sub { display: block !important; font-size: 0.75rem !important; color: #7A6F66 !important; }
+.b-opt-arrow { color: #C6A75E !important; font-size: 1.1rem !important; opacity: 0.5 !important; }
+.b-opt-phone { color: #C6A75E !important; font-family: 'Cormorant Garamond', serif !important; font-weight: 600 !important; font-size: 1rem !important; margin-left: auto !important; }
+
 </style>
 <style>
 /* Reset some specific inline-ish styles that might interfere */
@@ -1061,7 +1102,7 @@ section { padding: 160px 24px !important; }
     <li><a href="#" data-prop="inn-hills" onclick="switchTab('inn-hills');return false;">Inn The Hills</a></li>
     <li class="nav-divider"></li>
     <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#rooms" class="nav-book"><i class="ph ph-calendar-blank"></i> Book Now</a></li>
+    <li><a href="javascript:void(0)" onclick="openGeneralBooking()" class="nav-book"><i class="ph ph-calendar-blank"></i> Book Now</a></li>
   </ul>
 </nav>
 
@@ -1673,6 +1714,51 @@ section { padding: 160px 24px !important; }
   </div>
 </div>
 
+<!-- GENERAL BOOKING MODAL -->
+<div class="booking-modal-overlay" id="generalModal" onclick="if(event.target===this)closeGeneralBooking()">
+  <div class="booking-modal">
+    <button class="modal-close" onclick="closeGeneralBooking()">×</button>
+    <div class="modal-content-wrap">
+      <div style="margin-bottom: 24px;">
+        <img src="gallery/THE BETTER PLACE REVAMPED/3985d3a7-6f99-4bca-ba2e-3a68ca98d843.jpg" alt="Logo" style="width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:16px; border:2px solid #C6A75E;">
+        <h3 class="modal-room-name" style="margin-bottom:8px;">Reserve Your Stay</h3>
+        <p style="font-size:0.85rem; color:#7A6F66;">Choose how you'd like to reach us.<br>We confirm within minutes.</p>
+      </div>
+
+      <a href="https://wa.me/916366367517" target="_blank" class="booking-option-pill wa-opt">
+        <div class="b-opt-icon"><i class="ph ph-whatsapp-logo"></i></div>
+        <div class="b-opt-details">
+          <span class="b-opt-title">Book on WhatsApp</span>
+          <span class="b-opt-sub">Chat with us instantly</span>
+        </div>
+        <div class="b-opt-arrow"><i class="ph ph-arrow-right"></i></div>
+      </a>
+
+      <a href="tel:+916366367517" class="booking-option-pill call-opt">
+        <div class="b-opt-icon"><i class="ph ph-phone"></i></div>
+        <div class="b-opt-details">
+          <span class="b-opt-title">Call to Book</span>
+          <span class="b-opt-sub">Speak directly with the host</span>
+        </div>
+        <div class="b-opt-phone">+91 63663 67517</div>
+      </a>
+
+      <a href="tel:+918822983468" class="booking-option-pill urgent-opt">
+        <div class="b-opt-icon"><i class="ph ph-phone-call"></i></div>
+        <div class="b-opt-details">
+          <span class="b-opt-title">Urgent Booking</span>
+          <span class="b-opt-sub">If primary number unavailable</span>
+        </div>
+        <div class="b-opt-phone">+91 88229 83468</div>
+      </a>
+
+      <p class="modal-note" style="margin-top:32px; font-size:0.75rem; border-top:1px solid #F5EFE6; padding-top:24px;">
+        <i class="ph ph-instagram-logo" style="margin-right:4px;"></i> @inthehillsguwahati
+      </p>
+    </div>
+  </div>
+</div>
+
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" onclick="closeLightbox()">×</button>
@@ -1739,6 +1825,8 @@ const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersect
 reveals.forEach(el=>obs.observe(el));
 
 function openModal(room,price,type,img){
+  // Close general modal if open
+  closeGeneralBooking();
   document.getElementById('modalRoomName').textContent=room;
   // Separate price value and label
   const priceParts = price.split('/');
@@ -1759,6 +1847,13 @@ function openModal(room,price,type,img){
 }
 function closeModal(){document.getElementById('modalOverlay').classList.remove('open');}
 function closeModalOnOverlay(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
+
+function openGeneralBooking(){
+  document.getElementById('generalModal').classList.add('open');
+}
+function closeGeneralBooking(){
+  document.getElementById('generalModal').classList.remove('open');
+}
 
 let lbImages=[], lbIndex=0;
 function openLightbox(el,label){
