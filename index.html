@@ -949,6 +949,23 @@ section { padding: 160px 24px !important; }
   color: #7A6F66 !important;
 }
 
+/* CAROUSEL & CARD IMAGE FIXES */
+.room-carousel, .room-card > img, .unit-card > div > img {
+  background-color: #F5EFE6 !important; /* Soft neutral background */
+  overflow: hidden !important;
+  display: block !important;
+  border-radius: 20px 20px 0 0 !important; /* Keep rounded corners on top */
+}
+.carousel-track img, .room-card > img, .unit-card > div > img {
+  object-fit: contain !important; /* Ensure full image is visible */
+  object-position: center center !important;
+  width: 100% !important;
+  height: 260px !important; /* Fixed height for consistency */
+  padding: 16px !important; /* Slight inner padding */
+  box-sizing: border-box !important;
+  background-color: #F5EFE6 !important;
+}
+
 </style>
 </head>
 <body>
