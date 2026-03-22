@@ -1229,7 +1229,22 @@ section { padding: 160px 24px !important; }
           </div>
         </div>
         <div class="room-card">
-          <img src="imgs/aspen_1.jpeg" alt="Aspen" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <div class="room-carousel" id="carousel-aspen">
+            <div class="carousel-track">
+              <img src="gallery/inn%20the%20hills/aspen/39a169d3-d0de-413a-8047-1708f23c2824.jpg" alt="Aspen">
+              <img src="gallery/inn%20the%20hills/aspen/a395fe1f-65ed-44d2-a24e-23eac42cbb55.jpg" alt="Aspen">
+              <img src="gallery/inn%20the%20hills/aspen/d2cd3ad0-fda9-4b79-8642-5cf007a7de94.jpg" alt="Aspen">
+              <img src="gallery/inn%20the%20hills/aspen/dd136bde-f286-4eb1-80f6-2d63e636fd50.jpg" alt="Aspen">
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="carouselNav('carousel-aspen',-1)">&#8249;</button>
+            <button class="carousel-btn carousel-next" onclick="carouselNav('carousel-aspen',1)">&#8250;</button>
+            <div class="carousel-dots" id="dots-carousel-aspen">
+              <span class="cdot active" onclick="carouselGoto('carousel-aspen',0)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-aspen',1)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-aspen',2)"></span>
+              <span class="cdot" onclick="carouselGoto('carousel-aspen',3)"></span>
+            </div>
+          </div>
           <div class="room-card-body">
             <p class="room-card-type">Deluxe Room</p><h4 class="room-card-name">Aspen</h4>
             <p class="room-card-desc">Sleek mood-lit room with a tall tufted headboard, dark accent wall, twin crimson chairs, and gold-legged tables — sophistication in every corner.</p>
@@ -1364,10 +1379,10 @@ section { padding: 160px 24px !important; }
         <div class="gallery-sub-line"></div>
       </div>
       <div class="gallery-grid g4" style="grid-auto-rows:220px;">
-        <div class="gp gp-aspen big" onclick="openLightbox(this,'Aspen · Room View')"><img src="imgs/aspen_1.jpeg" alt="Aspen" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Room View</span></div></div>
-        <div class="gp gp-aspen" onclick="openLightbox(this,'Aspen')"><img src="imgs/aspen_2.jpeg" alt="Aspen" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Lounge Chairs</span></div></div>
-        <div class="gp gp-aspen" onclick="openLightbox(this,'Aspen · Detail')"><img src="imgs/aspen_3.jpeg" alt="Aspen" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom</span></div></div>
-        <div class="gp gp-aspen wide" onclick="openLightbox(this,'Aspen · Bedroom')"><img src="imgs/aspen_4.jpeg" alt="Aspen" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Full Room</span></div></div>
+        <div class="gp gp-aspen big" onclick="openLightbox(this,'Aspen · Room View')"><img src="gallery/inn%20the%20hills/aspen/39a169d3-d0de-413a-8047-1708f23c2824.jpg" alt="Aspen" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Room View</span></div></div>
+        <div class="gp gp-aspen" onclick="openLightbox(this,'Aspen')"><img src="gallery/inn%20the%20hills/aspen/a395fe1f-65ed-44d2-a24e-23eac42cbb55.jpg" alt="Aspen" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Lounge</span></div></div>
+        <div class="gp gp-aspen" onclick="openLightbox(this,'Aspen · Detail')"><img src="gallery/inn%20the%20hills/aspen/d2cd3ad0-fda9-4b79-8642-5cf007a7de94.jpg" alt="Aspen" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom</span></div></div>
+        <div class="gp gp-aspen wide" onclick="openLightbox(this,'Aspen · Bedroom')"><img src="gallery/inn%20the%20hills/aspen/dd136bde-f286-4eb1-80f6-2d63e636fd50.jpg" alt="Aspen" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Full Room</span></div></div>
       </div>
 
     </div><!-- /gsection-inn-hills -->
