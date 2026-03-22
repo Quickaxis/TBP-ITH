@@ -958,6 +958,93 @@ section { padding: 160px 24px !important; }
   color: #7A6F66 !important;
 }
 
+/* PREMIUM BOOKING TILE */
+.booking-modal-overlay {
+  background: rgba(43,43,43,0.5) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: opacity 0.4s ease !important;
+}
+.booking-modal {
+  background: #FFFFFF !important;
+  border-radius: 24px !important;
+  padding: 0 !important;
+  max-width: 420px !important;
+  width: 90% !important;
+  overflow: hidden !important;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12) !important;
+  border: 1px solid rgba(0,0,0,0.05) !important;
+  transform: scale(0.9) translateY(20px) !important;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.booking-modal-overlay.open .booking-modal {
+  transform: scale(1) translateY(0) !important;
+}
+.modal-header-img {
+  width: 100% !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  display: none !important;
+}
+.modal-content-wrap {
+  padding: 40px 32px !important;
+  text-align: center !important;
+}
+.modal-close {
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  background: rgba(255,255,255,0.9) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  z-index: 10 !important;
+}
+.modal-room-name {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 2.2rem !important;
+  margin-bottom: 12px !important;
+  line-height: 1.1 !important;
+}
+.modal-room-price {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.6rem !important;
+  color: #C6A75E !important;
+  margin-bottom: 4px !important;
+  font-weight: 600 !important;
+}
+.modal-price-sub {
+  font-size: 0.8rem !important;
+  color: #7A6F66 !important;
+  margin-bottom: 32px !important;
+  display: block !important;
+}
+.modal-wa-btn {
+  background: #C6A75E !important;
+  color: #FFFFFF !important;
+  border-radius: 16px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  font-size: 0.9rem !important;
+  height: 56px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  box-shadow: 0 8px 20px rgba(198,167,94, 0.25) !important;
+}
+.modal-wa-btn:hover {
+  background: #D4AF37 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 25px rgba(198,167,94, 0.35) !important;
+}
+.modal-note {
+  font-size: 0.7rem !important;
+  margin-top: 24px !important;
+  opacity: 0.7 !important;
+}
+
 </style>
 <style>
 /* Reset some specific inline-ish styles that might interfere */
@@ -1114,7 +1201,7 @@ section { padding: 160px 24px !important; }
           <div class="unit-features"><span class="unit-feature">5 Bedrooms</span><span class="unit-feature">6 Beds</span><span class="unit-feature">Open Terrace</span><span class="unit-feature">Huge Hall</span><span class="unit-feature">Full Kitchen</span><span class="unit-feature">AC</span></div>
           <div class="unit-footer">
             <div><div class="unit-price-label">Per Day</div><div class="unit-price">₹18,000 <span style="font-size:.7rem;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:300;">/ day</span></div></div>
-            <button class="room-book-btn" onclick="openModal('The Better Place Revamped','₹18,000/day','unit')">Book <i class="ph ph-whatsapp-logo"></i></button>
+            <button class="room-book-btn" onclick="openModal('The Better Place Revamped','₹18,000/day','unit','gallery/THE BETTER PLACE REVAMPED/3985d3a7-6f99-4bca-ba2e-3a68ca98d843.jpg')">Book <i class="ph ph-whatsapp-logo"></i></button>
           </div>
         </div>
         <div class="unit-card">
@@ -1135,7 +1222,7 @@ section { padding: 160px 24px !important; }
           <div class="unit-features"><span class="unit-feature">3 BHK</span><span class="unit-feature">Huge Kitchen</span><span class="unit-feature">Spacious Hall</span><span class="unit-feature">Ground Level</span><span class="unit-feature">AC Rooms</span></div>
           <div class="unit-footer">
             <div><div class="unit-price-label">Per Day</div><div class="unit-price">₹7,000 <span style="font-size:.7rem;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:300;">/ day</span></div></div>
-            <button class="room-book-btn" onclick="openModal('The Better Place Ground Floor','₹7,000/day','unit')">Book <i class="ph ph-whatsapp-logo"></i></button>
+            <button class="room-book-btn" onclick="openModal('The Better Place Ground Floor','₹7,000/day','unit','gallery/THE BETTER PLACE 2.0/d6890bbf-429a-4190-969a-e3eb17af564f.jpg')">Book <i class="ph ph-whatsapp-logo"></i></button>
           </div>
         </div>
       </div>
@@ -1153,7 +1240,7 @@ section { padding: 160px 24px !important; }
             <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#fff;font-weight:600;line-height:1;">₹25,000 <span style="font-size:.72rem;color:rgba(255,255,255,.4);font-family:'DM Sans',sans-serif;font-weight:300;">/ day</span></div>
             <div style="font-size:.65rem;color:var(--gold-light);margin-top:2px;">Save ₹0 · Full occupancy</div>
           </div>
-          <button class="room-book-btn" style="background:var(--gold);font-size:.8rem;padding:12px 22px;" onclick="openModal('Both Units — Full Property','₹25,000/day','unit')">Book Both <i class="ph ph-whatsapp-logo"></i></button>
+          <button class="room-book-btn" style="background:var(--gold);font-size:.8rem;padding:12px 22px;" onclick="openModal('Both Units — Full Property','₹25,000/day','unit','gallery/THE BETTER PLACE REVAMPED/ff07b596-98a9-4cce-a9f8-8ce9de0504d6.jpg')">Book Both <i class="ph ph-whatsapp-logo"></i></button>
         </div>
       </div>
 
@@ -1188,7 +1275,7 @@ section { padding: 160px 24px !important; }
           <div class="room-card-body">
             <p class="room-card-type">Standard Room</p><h4 class="room-card-name">Olive &amp; Orchid</h4>
             <p class="room-card-desc">A warm room with double bed, red velvet lounge chairs, and earthy blue drapes. Clean kitchenette and private attached bath.</p>
-            <div class="room-card-footer"><div><span class="room-price-label">Tariff</span><div class="room-price-value">₹1,500 <span class="room-price-per">/ night</span></div></div><button class="room-book-btn room-book-btn-alt" onclick="openModal('Olive &amp; Orchid','₹1,500/night','inn')">Book <i class="ph ph-whatsapp-logo"></i></button></div>
+            <div class="room-card-footer"><div><span class="room-price-label">Tariff</span><div class="room-price-value">₹1,500 <span class="room-price-per">/ night</span></div></div><button class="room-book-btn room-book-btn-alt" onclick="openModal('Olive &amp; Orchid','₹1,500/night','inn','gallery/inn the hills/Olive and orchid/b19a42fa-3201-4e75-bc5c-81dd4b02004f.jpg')">Book <i class="ph ph-whatsapp-logo"></i></button></div>
           </div>
         </div>
         <div class="room-card">
@@ -1211,7 +1298,7 @@ section { padding: 160px 24px !important; }
           <div class="room-card-body">
             <p class="room-card-type">Deluxe Room</p><h4 class="room-card-name">Jasper &amp; Juniper</h4>
             <p class="room-card-desc">Blue velvet drapes, a full-length arched mirror, warm pendant lighting, and a plush king bed. A room with personality and poise.</p>
-            <div class="room-card-footer"><div><span class="room-price-label">Tariff</span><div class="room-price-value">₹2,000 <span class="room-price-per">/ night</span></div></div><button class="room-book-btn room-book-btn-alt" onclick="openModal('Jasper &amp; Juniper','₹2,000/night','inn')">Book <i class="ph ph-whatsapp-logo"></i></button></div>
+            <div class="room-card-footer"><div><span class="room-price-label">Tariff</span><div class="room-price-value">₹2,000 <span class="room-price-per">/ night</span></div></div><button class="room-book-btn room-book-btn-alt" onclick="openModal('Jasper &amp; Juniper','₹2,000/night','inn','imgs/jasper_1.jpeg')">Book <i class="ph ph-whatsapp-logo"></i></button></div>
           </div>
         </div>
         <div class="room-card">
@@ -1236,7 +1323,7 @@ section { padding: 160px 24px !important; }
           <div class="room-card-body">
             <p class="room-card-type">Premium Room</p><h4 class="room-card-name">Scarlet &amp; Sequoia</h4>
             <p class="room-card-desc">Studio-style premium room with a large crimson sofa set, TV lounge, marble-finish wardrobe, and full-length mirror. Most spacious of the five.</p>
-            <div class="room-card-footer"><div><span class="room-price-label">Tariff</span><div class="room-price-value">₹2,500 <span class="room-price-per">/ night</span></div></div><button class="room-book-btn room-book-btn-alt" onclick="openModal('Scarlet &amp; Sequoia','₹2,500/night','inn')">Book <i class="ph ph-whatsapp-logo"></i></button></div>
+            <div class="room-card-footer"><div><span class="room-price-label">Tariff</span><div class="room-price-value">₹2,500 <span class="room-price-per">/ night</span></div></div><button class="room-book-btn room-book-btn-alt" onclick="openModal('Scarlet &amp; Sequoia','₹2,500/night','inn','imgs/scarlet_1.jpeg')">Book <i class="ph ph-whatsapp-logo"></i></button></div>
           </div>
         </div>
         <div class="room-card">
@@ -1261,7 +1348,7 @@ section { padding: 160px 24px !important; }
           <div class="room-card-body">
             <p class="room-card-type">Premium Room</p><h4 class="room-card-name">Maple &amp; Magnolia</h4>
             <p class="room-card-desc">Richly decorated lounge-style room with blue drapes, warm lantern lighting, rattan décor, and a king bed. Charming details throughout.</p>
-            <div class="room-card-footer"><div><span class="room-price-label">Tariff</span><div class="room-price-value">₹2,500 <span class="room-price-per">/ night</span></div></div><button class="room-book-btn room-book-btn-alt" onclick="openModal('Maple &amp; Magnolia','₹2,500/night','inn')">Book <i class="ph ph-whatsapp-logo"></i></button></div>
+            <div class="room-card-footer"><div><span class="room-price-label">Tariff</span><div class="room-price-value">₹2,500 <span class="room-price-per">/ night</span></div></div><button class="room-book-btn room-book-btn-alt" onclick="openModal('Maple &amp; Magnolia','₹2,500/night','inn','imgs/maple_1.jpeg')">Book <i class="ph ph-whatsapp-logo"></i></button></div>
           </div>
         </div>
         <div class="room-card">
@@ -1284,7 +1371,7 @@ section { padding: 160px 24px !important; }
           <div class="room-card-body">
             <p class="room-card-type">Deluxe Room</p><h4 class="room-card-name">Aspen</h4>
             <p class="room-card-desc">Sleek mood-lit room with a tall tufted headboard, dark accent wall, twin crimson chairs, and gold-legged tables — sophistication in every corner.</p>
-            <div class="room-card-footer"><div><span class="room-price-label">Tariff</span><div class="room-price-value">₹2,000 <span class="room-price-per">/ night</span></div></div><button class="room-book-btn room-book-btn-alt" onclick="openModal('Aspen','₹2,000/night','inn')">Book <i class="ph ph-whatsapp-logo"></i></button></div>
+            <div class="room-card-footer"><div><span class="room-price-label">Tariff</span><div class="room-price-value">₹2,000 <span class="room-price-per">/ night</span></div></div><button class="room-book-btn room-book-btn-alt" onclick="openModal('Aspen','₹2,000/night','inn','gallery/inn the hills/aspen/39a169d3-d0de-413a-8047-1708f23c2824.jpg')">Book <i class="ph ph-whatsapp-logo"></i></button></div>
           </div>
         </div>
       </div>
@@ -1487,7 +1574,7 @@ section { padding: 160px 24px !important; }
             <div class="cprop-price-label">From</div>
             <div class="cprop-price">₹7,000 <span>/ day</span></div>
           </div>
-          <button class="cprop-book-btn" onclick="openModal('The Better Place','₹7,000/day','unit')">
+          <button class="cprop-book-btn" onclick="openModal('The Better Place','₹7,000/day','unit','gallery/THE BETTER PLACE 2.0/d6890bbf-429a-4190-969a-e3eb17af564f.jpg')">
             <i class="ph ph-whatsapp-logo"></i> Book
           </button>
         </div>
@@ -1511,7 +1598,7 @@ section { padding: 160px 24px !important; }
             <div class="cprop-price-label">From</div>
             <div class="cprop-price">₹1,500 <span>/ night</span></div>
           </div>
-          <button class="cprop-book-btn" onclick="openModal('Inn The Hills','₹1,500/night','inn')">
+          <button class="cprop-book-btn" onclick="openModal('Inn The Hills','₹1,500/night','inn','imgs/olive_1.jpeg')">
             <i class="ph ph-whatsapp-logo"></i> Book
           </button>
         </div>
@@ -1566,15 +1653,23 @@ section { padding: 160px 24px !important; }
   </div>
 </footer>
 
-<!-- BOOKING MODAL -->
+<!-- BOOKING TILE MODAL -->
 <div class="booking-modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
   <div class="booking-modal">
     <button class="modal-close" onclick="closeModal()">×</button>
-    <p id="modalBadge" class="prop-badge"><i class="ph ph-map-pin"></i> Inn The Hills</p>
-    <h3 class="modal-room-name" id="modalRoomName">Room Name</h3>
-    <p class="modal-room-price" id="modalRoomPrice">₹X,XXX / night</p>
-    <a id="modalWaLink" href="#" target="_blank" class="modal-wa-btn"><i class="ph ph-whatsapp-logo" style="font-size:1.2rem"></i> Enquire on WhatsApp</a>
-    <p class="modal-note">Our team typically responds within 15 minutes.<br>Please mention your preferred check-in date and duration.</p>
+    <img id="modalImg" src="" alt="Property Preview" class="modal-header-img">
+    <div class="modal-content-wrap">
+      <p id="modalBadge" style="display:none;"></p>
+      <h3 class="modal-room-name" id="modalRoomName">Room Name</h3>
+      <div style="margin-bottom: 24px;">
+        <span class="modal-room-price" id="modalRoomPrice">₹X,XXX</span>
+        <span class="modal-price-sub" id="modalPriceSub">per night</span>
+      </div>
+      <a id="modalWaLink" href="#" target="_blank" class="modal-wa-btn">
+        <i class="ph ph-whatsapp-logo" style="font-size:1.4rem"></i> Book on WhatsApp
+      </a>
+      <p class="modal-note">Our team typically responds within 15 mins.<br>Direct booking · No extra fees</p>
+    </div>
   </div>
 </div>
 
@@ -1643,10 +1738,21 @@ const reveals=document.querySelectorAll('.reveal');
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:.1});
 reveals.forEach(el=>obs.observe(el));
 
-function openModal(room,price,type){
+function openModal(room,price,type,img){
   document.getElementById('modalRoomName').textContent=room;
-  document.getElementById('modalRoomPrice').textContent=price;
-  document.getElementById('modalBadge').innerHTML=type==='inn'?'<i class="ph ph-map-pin"></i> Inn The Hills':'<i class="ph ph-house-line"></i> The Better Place';
+  // Separate price value and label
+  const priceParts = price.split('/');
+  document.getElementById('modalRoomPrice').textContent=priceParts[0].trim();
+  document.getElementById('modalPriceSub').textContent=priceParts[1] ? 'per ' + priceParts[1].trim() : (type==='inn'?'per night':'per day');
+  
+  const imgEl = document.getElementById('modalImg');
+  if(img){
+    imgEl.src = img;
+    imgEl.style.display = 'block';
+  } else {
+    imgEl.style.display = 'none';
+  }
+  
   const msg=encodeURIComponent(`Hi! I'd like to book *${room}* (${price}). Please share availability.`);
   document.getElementById('modalWaLink').href=`https://wa.me/916366367517?text=${msg}`;
   document.getElementById('modalOverlay').classList.add('open');
