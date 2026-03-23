@@ -1118,6 +1118,56 @@ section { padding: 160px 24px !important; }
 .b-opt-arrow { color: #C6A75E !important; font-size: 1.1rem !important; opacity: 0.5 !important; }
 .b-opt-phone { color: #C6A75E !important; font-family: 'Cormorant Garamond', serif !important; font-weight: 600 !important; font-size: 1rem !important; margin-left: auto !important; }
 
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1.06);
+  animation: none;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  animation: heroZoom 7s ease-out forwards;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1.0); }
+}
+
+.hero-slideshow-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(10, 16, 10, 0.55) 0%,
+      rgba(10, 16, 10, 0.35) 40%,
+      rgba(10, 16, 10, 0.55) 100%);
+  z-index: 1;
+}
+
+/* Make sure all hero content sits above the slideshow */
+#hero .hero-bg-layer,
+#hero .hero-orb,
+#hero .hero-grid-bg,
+#hero .hero-line,
+#hero .hero-content,
+#hero .hero-props {
+  position: relative;
+  z-index: 2;
+}
+
 </style>
 <style>
 /* Reset some specific inline-ish styles that might interfere */
@@ -1140,6 +1190,19 @@ section { padding: 160px 24px !important; }
 
 <!-- HERO -->
 <section id="hero">
+  <div class="hero-slideshow" id="heroSlideshow">
+    <div class="hero-slide" style="background-image:url('imgs/olive_1.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('imgs/olive_2.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('imgs/jasper_2.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('imgs/jasper_3.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('imgs/scarlet_1.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('imgs/scarlet_3.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('imgs/maple_3.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('imgs/maple_4.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('imgs/aspen_1.jpeg')"></div>
+    <div class="hero-slide" style="background-image:url('imgs/aspen_2.jpeg')"></div>
+    <div class="hero-slideshow-overlay"></div>
+  </div>
   <div class="hero-bg-layer"></div>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
@@ -1805,6 +1868,25 @@ section { padding: 160px 24px !important; }
 </div>
 
 <script>
+(function() {
+  const slides = document.querySelectorAll('.hero-slide');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => {
+      s.classList.remove('active');
+    });
+    slides[index].classList.add('active');
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  showSlide(0);
+  setInterval(nextSlide, 5000);
+})();
 
 const carouselState = {};
 
