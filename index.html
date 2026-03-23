@@ -641,6 +641,9 @@ footer{background:#020504;padding:80px 24px 40px;border-top:1px solid rgba(197, 
   .gallery-sub-title { font-size: 1.1rem; }
   .property-section-header { padding: 28px 28px 28px 34px; }
   .ps-name { font-size: 1.75rem; }
+  #location > div > div:last-child {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1757,6 +1760,72 @@ section { padding: 160px 24px !important; }
     <div class="strip-item"><i class="ph ph-map-pin strip-icon"></i><span class="strip-text"><strong>Inn The Hills</strong> — Jonaki Nagar Bye Lane 2, VIP Rd, Borbari, Guwahati 781036</span></div>
     <div class="strip-sep"></div>
     <div class="strip-item"><i class="ph ph-clock strip-icon"></i><span class="strip-text">Check-in <strong>2 PM</strong> · Check-out <strong>11 AM</strong></span></div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" style="background:#F8F3EB;padding:88px 24px;">
+  <div style="max-width:1080px;margin:0 auto;">
+
+    <!-- Header -->
+    <div style="margin-bottom:48px;">
+      <p style="display:inline-flex;align-items:center;gap:8px;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:#A67C45;margin-bottom:12px;font-weight:500;">
+        <span style="display:block;width:18px;height:1px;background:#A67C45;"></span>
+        Find Us
+      </p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.1rem,5vw,3.6rem);font-weight:400;color:#2E1F0E;line-height:1.08;margin-bottom:0;">
+        Our Locations
+      </h2>
+    </div>
+
+    <!-- Two map cards -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+
+      <!-- The Better Place -->
+      <div style="background:#fff;border-radius:28px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+        <div style="position:relative;width:100%;height:280px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5!2d91.7!3d26.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5989324a7f53%3A0xf5f3b0ff64077c8f!2sThe%20Better%20Place%20Guwahati!5e0!3m2!1sen!2sin!4v1"
+            width="100%" height="280" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div style="padding:22px 26px 26px;">
+          <p style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#A67C45;margin-bottom:8px;font-weight:500;">Property 01 · Villa Stay</p>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#2E1F0E;font-weight:500;margin-bottom:8px;">The Better Place</h3>
+          <p style="font-size:.82rem;color:#7A6550;line-height:1.7;margin-bottom:18px;font-weight:300;">Guwahati, Assam</p>
+          <a href="https://google.com/maps/place/the+better+place+guwahati/data=!4m2!3m1!1s0x375a5989324a7f53:0xf5f3b0ff64077c8f?sa=X&ved=1t:242&ictx=111"
+             target="_blank"
+             style="display:inline-flex;align-items:center;gap:8px;background:#2E1F0E;color:#fff;text-decoration:none;padding:10px 22px;border-radius:100px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;transition:all .25s;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" fill="white"><path d="M128,16a96,96,0,1,0,96,96A96.11,96.11,0,0,0,128,16Zm0,176a80,80,0,1,1,80-80A80.09,80.09,0,0,1,128,192Zm0-104a8,8,0,0,1,8,8v48a8,8,0,0,1-16,0V96A8,8,0,0,1,128,88Zm0-16a12,12,0,1,1,12-12A12,12,0,0,1,128,72Z"/></svg>
+            Open in Maps
+          </a>
+        </div>
+      </div>
+
+      <!-- Inn The Hills -->
+      <div style="background:#fff;border-radius:28px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+        <div style="position:relative;width:100%;height:280px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.0!2d91.72!3d26.14!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xff809bdbf56fe8f9!2sInn%20The%20Hills!5e0!3m2!1sen!2sin!4v1"
+            width="100%" height="280" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div style="padding:22px 26px 26px;">
+          <p style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#A67C45;margin-bottom:8px;font-weight:500;">Property 02 · Boutique Homestay</p>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#2E1F0E;font-weight:500;margin-bottom:8px;">Inn The Hills</h3>
+          <p style="font-size:.82rem;color:#7A6550;line-height:1.7;margin-bottom:18px;font-weight:300;">97(B) Robin's Residency, Jonaki Nagar Bye Lane 2,<br>VIP Road, Borbari, Guwahati 781036</p>
+          <a href="https://google.com/maps/place/Inn+The+Hills/data=!4m2!3m1!1s0x0:0xff809bdbf56fe8f9?sa=X&ved=1t:2428&ictx=111"
+             target="_blank"
+             style="display:inline-flex;align-items:center;gap:8px;background:#2E1F0E;color:#fff;text-decoration:none;padding:10px 22px;border-radius:100px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;transition:all .25s;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" fill="white"><path d="M128,16a96,96,0,1,0,96,96A96.11,96.11,0,0,0,128,16Zm0,176a80,80,0,1,1,80-80A80.09,80.09,0,0,1,128,192Zm0-104a8,8,0,0,1,8,8v48a8,8,0,0,1-16,0V96A8,8,0,0,1,128,88Zm0-16a12,12,0,1,1,12-12A12,12,0,0,1,128,72Z"/></svg>
+            Open in Maps
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
