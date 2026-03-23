@@ -768,26 +768,7 @@ section, footer, #hero, #gallery, #contact, #properties, #rooms {
 @media (max-width: 1240px) {
   #hero { border-radius: 0 !important; }
 }
-.hero-pretitle, .hero-desc {
-  color: #2B2B2B !important;
-  text-shadow: 0 2px 10px rgba(255,255,255,0.9);
-  font-weight: 500 !important;
-}
-.hero-title {
-  color: #2B2B2B !important;
-  text-shadow: 0 4px 20px rgba(255,255,255,0.9);
-}
-.hero-title .line-2 {
-  background: none !important;
-  -webkit-text-fill-color: #C6A75E !important;
-}
-.hero-eyebrow {
-  color: #2B2B2B !important;
-  text-shadow: 0 2px 10px rgba(255,255,255,0.9);
-}
-.hero-eyebrow::before, .hero-eyebrow::after {
-  background: linear-gradient(90deg, transparent, #2B2B2B) !important;
-}
+
 
 /* CARDS */
 .prop-card, .property-feature, .room-card, .unit-card, .contact-prop-card, .booking-modal {
@@ -808,11 +789,11 @@ section, footer, #hero, #gallery, #contact, #properties, #rooms {
 }
 
 /* TEXT COLOR OVERRIDES */
-h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .pf-name, .ps-name, .unit-name, .room-card-name, .contact-title, .cprop-name, .footer-brand, .modal-room-name {
+h1, h2, h3, h4, h5, h6, .section-title, .pf-name, .ps-name, .unit-name, .room-card-name, .contact-title, .cprop-name, .footer-brand, .modal-room-name {
   font-family: 'Cormorant Garamond', serif !important;
   color: #2B2B2B !important;
 }
-body, p, span, a, div, .hero-desc, .section-desc, .pf-desc, .room-card-desc, .unit-desc, .contact-desc {
+body, p, span, a, div, .section-desc, .pf-desc, .room-card-desc, .unit-desc, .contact-desc {
   font-family: 'DM Sans', sans-serif;
   color: #7A6F66 !important;
 }
@@ -1146,9 +1127,9 @@ section { padding: 160px 24px !important; }
   inset: 0;
   background:
     linear-gradient(to bottom,
-      rgba(10, 16, 10, 0.55) 0%,
-      rgba(10, 16, 10, 0.35) 40%,
-      rgba(10, 16, 10, 0.55) 100%);
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.60) 40%,
+      rgba(0, 0, 0, 0.75) 100%);
   z-index: 1;
 }
 
@@ -1162,6 +1143,36 @@ section { padding: 160px 24px !important; }
   z-index: 2;
 }
 
+/* HERO TEXT VISIBILITY OVERRIDES */
+.hero-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.hero-title .line-1,
+.hero-title .line-3 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.hero-pretitle {
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+
+.hero-eyebrow {
+  color: var(--gold-light) !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+
+.hero-desc {
+  color: rgba(255, 255, 255, 0.80) !important;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+}
+
+.hero-divider {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent) !important;
+}
 </style>
 <style>
 /* Reset some specific inline-ish styles that might interfere */
