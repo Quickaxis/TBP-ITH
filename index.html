@@ -1125,25 +1125,20 @@ section { padding: 160px 24px !important; }
   overflow: hidden;
 }
 
+.hero-slideshow-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
 .hero-slide {
-  position: absolute;
-  inset: 0;
+  min-width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center center;
-  opacity: 0;
-  transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(1.06);
-  animation: none;
-}
-
-.hero-slide.active {
-  opacity: 1;
-  animation: heroZoom 7s ease-out forwards;
-}
-
-@keyframes heroZoom {
-  from { transform: scale(1.06); }
-  to   { transform: scale(1.0); }
+  flex-shrink: 0;
 }
 
 .hero-slideshow-overlay {
@@ -1157,7 +1152,6 @@ section { padding: 160px 24px !important; }
   z-index: 1;
 }
 
-/* Make sure all hero content sits above the slideshow */
 #hero .hero-bg-layer,
 #hero .hero-orb,
 #hero .hero-grid-bg,
@@ -1191,16 +1185,18 @@ section { padding: 160px 24px !important; }
 <!-- HERO -->
 <section id="hero">
   <div class="hero-slideshow" id="heroSlideshow">
-    <div class="hero-slide" style="background-image:url('imgs/olive_1.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('imgs/olive_2.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('imgs/jasper_2.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('imgs/jasper_3.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('imgs/scarlet_1.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('imgs/scarlet_3.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('imgs/maple_3.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('imgs/maple_4.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('imgs/aspen_1.jpeg')"></div>
-    <div class="hero-slide" style="background-image:url('imgs/aspen_2.jpeg')"></div>
+    <div class="hero-slideshow-track" id="heroTrack">
+      <div class="hero-slide" style="background-image:url('imgs/olive_1.jpeg')"></div>
+      <div class="hero-slide" style="background-image:url('imgs/olive_2.jpeg')"></div>
+      <div class="hero-slide" style="background-image:url('imgs/jasper_2.jpeg')"></div>
+      <div class="hero-slide" style="background-image:url('imgs/jasper_3.jpeg')"></div>
+      <div class="hero-slide" style="background-image:url('imgs/scarlet_1.jpeg')"></div>
+      <div class="hero-slide" style="background-image:url('imgs/scarlet_3.jpeg')"></div>
+      <div class="hero-slide" style="background-image:url('imgs/maple_3.jpeg')"></div>
+      <div class="hero-slide" style="background-image:url('imgs/maple_4.jpeg')"></div>
+      <div class="hero-slide" style="background-image:url('imgs/aspen_1.jpeg')"></div>
+      <div class="hero-slide" style="background-image:url('imgs/aspen_2.jpeg')"></div>
+    </div>
     <div class="hero-slideshow-overlay"></div>
   </div>
   <div class="hero-bg-layer"></div>
@@ -1869,23 +1865,36 @@ section { padding: 160px 24px !important; }
 
 <script>
 (function() {
+  const track = document.getElementById('heroTrack');
   const slides = document.querySelectorAll('.hero-slide');
+  const total = slides.length;
   let current = 0;
 
-  function showSlide(index) {
-    slides.forEach((s, i) => {
-      s.classList.remove('active');
-    });
-    slides[index].classList.add('active');
+  function goTo(index) {
+    current = index;
+    track.style.transform = `translateX(-${current * 100}%)`;
   }
 
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
+  function next() {
+    const nextIndex = (current + 1) % total;
+
+    // When we reach the last slide, snap back to 0 instantly before animating
+    if (current === total - 1) {
+      track.style.transition = 'none';
+      track.style.transform = 'translateX(0%)';
+      current = 0;
+      // Force reflow then re-enable transition
+      track.getBoundingClientRect();
+      track.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+      return;
+    }
+
+    track.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+    goTo(nextIndex);
   }
 
-  showSlide(0);
-  setInterval(nextSlide, 5000);
+  goTo(0);
+  setInterval(next, 500);
 })();
 
 const carouselState = {};
