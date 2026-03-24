@@ -1176,6 +1176,52 @@ section { padding: 160px 24px !important; }
 .hero-divider {
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent) !important;
 }
+
+@media (max-width: 768px) {
+  /* Stack map cards vertically */
+  #location > div > div:last-child {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  /* Fix the Open in Maps button wrapping */
+  #location a[target="_blank"] {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px !important;
+    font-size: .75rem !important;
+    border-radius: 100px !important;
+    white-space: nowrap;
+  }
+
+  /* Fix the property tag wrapping */
+  #location p[style*="letter-spacing"] {
+    white-space: normal;
+    line-height: 1.5;
+  }
+
+  /* Reduce section padding on mobile */
+  #location {
+    padding: 60px 16px !important;
+  }
+
+  /* Make map height shorter on mobile */
+  #location iframe {
+    height: 220px !important;
+  }
+
+  /* Fix card padding on mobile */
+  #location .card-body,
+  #location > div > div > div > div:last-child {
+    padding: 18px 20px 22px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .location-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
 </style>
 <style>
 /* Reset some specific inline-ish styles that might interfere */
@@ -1779,7 +1825,7 @@ section { padding: 160px 24px !important; }
     </div>
 
     <!-- Two map cards -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;" class="location-grid">
 
       <!-- The Better Place -->
       <div style="background:#fff;border-radius:28px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);box-shadow:0 4px 24px rgba(0,0,0,0.07);">
