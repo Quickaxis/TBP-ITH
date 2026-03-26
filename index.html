@@ -392,8 +392,8 @@ section{padding:120px 24px;}
 .gp-empty-num{font-size:.7rem;color:rgba(255,255,255,.2);letter-spacing:.15em;text-transform:uppercase;max-width: 140px;}
 .gp-add{position:absolute;bottom:16px;right:16px;background:rgba(197,160,89,.1);border:1px solid rgba(197,160,89,.2);border-radius:100px;padding:4px 12px;font-size:.6rem;color:var(--gold-light);letter-spacing:.15em;text-transform:uppercase;opacity: 0.6; transition: all 0.3s;}
 .gp:hover .gp-add{opacity: 1; background: var(--gold); color: #fff; border-color: var(--gold);}
-.gp-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8) 0%,transparent 60%);opacity:0;transition:opacity 0.4s var(--tr);display:flex;align-items:flex-end;padding:24px;}
-.gp:hover .gp-overlay{opacity:1;}
+.gp-overlay{display:none !important;}
+.gp:hover .gp-overlay{display:none !important;}
 .gp-overlay-label{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:#fff;font-weight:600;}
 
 /* Placeholder Gradients for Villa/Ground */
@@ -1596,26 +1596,26 @@ section { padding: 160px 24px !important; }
                alt="Villa · Entrance" 
                loading="lazy"
                style="width:100%;height:100%;object-fit:cover;object-position:center;position:absolute;inset:0;display:block;">
-          <div class="gp-overlay"><span class="gp-overlay-label">Entrance</span></div>
+          
         </div>
         <!-- Row A: 1 big(2×2) + 2 small stacked + 1 tall -->
-        <div class="gp gp-villa big" onclick="openLightbox(this,'Villa · Hall & Living')"><img src="gallery/THE BETTER PLACE REVAMPED/222d08b1-5062-4fe0-8e38-ba5a06e60671.jpg" alt="Villa Heritage Hall"><div class="gp-overlay"><span class="gp-overlay-label">Hall &amp; Living</span></div></div>
-        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bedroom 1')"><img src="gallery/THE BETTER PLACE REVAMPED/222d08b1-5062-4fe0-8e38-ba5a06e60671.jpg" alt="Villa Bedroom"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom 1</span></div></div>
-        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bedroom 2')"><img src="gallery/THE BETTER PLACE REVAMPED/5153a45f-9681-4e24-b030-9ece1f6e3f4e.jpg" alt="Villa Bedroom 2"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom 2</span></div></div>
-        <div class="gp gp-villa tall" onclick="openLightbox(this,'Villa · Open Terrace')"><img src="gallery/THE BETTER PLACE REVAMPED/6086e994-f544-4278-aff7-dedc3bcaaa4d.jpg" alt="Villa Open Terrace"><div class="gp-overlay"><span class="gp-overlay-label">Open Terrace</span></div></div>
+        <div class="gp gp-villa big" onclick="openLightbox(this,'Villa · Hall & Living')"><img src="gallery/THE BETTER PLACE REVAMPED/222d08b1-5062-4fe0-8e38-ba5a06e60671.jpg" alt="Villa Heritage Hall"></div>
+        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bedroom 1')"><img src="gallery/THE BETTER PLACE REVAMPED/222d08b1-5062-4fe0-8e38-ba5a06e60671.jpg" alt="Villa Bedroom"></div>
+        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bedroom 2')"><img src="gallery/THE BETTER PLACE REVAMPED/5153a45f-9681-4e24-b030-9ece1f6e3f4e.jpg" alt="Villa Bedroom 2"></div>
+        <div class="gp gp-villa tall" onclick="openLightbox(this,'Villa · Open Terrace')"><img src="gallery/THE BETTER PLACE REVAMPED/6086e994-f544-4278-aff7-dedc3bcaaa4d.jpg" alt="Villa Open Terrace"></div>
         <!-- Row B: 3 small + (tall already spans) -->
-        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bedroom 3')"><img src="gallery/THE BETTER PLACE REVAMPED/a555ffc1-1409-4d00-a2e2-64956a73d259.jpg" alt="Villa Bedroom 3"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom 3</span></div></div>
-        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Kitchen')"><img src="gallery/THE BETTER PLACE REVAMPED/b9315be5-bc8e-4a45-bfdd-601f91eb3eaa.jpg" alt="Villa Kitchen"><div class="gp-overlay"><span class="gp-overlay-label">Kitchen</span></div></div>
-        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bedroom 4')"><img src="gallery/THE BETTER PLACE REVAMPED/c9a4bb4e-f18d-4b42-831a-d7589f1a6e4c.jpg" alt="Villa Bedroom 4"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom 4</span></div></div>
+        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bedroom 3')"><img src="gallery/THE BETTER PLACE REVAMPED/a555ffc1-1409-4d00-a2e2-64956a73d259.jpg" alt="Villa Bedroom 3"></div>
+        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Kitchen')"><img src="gallery/THE BETTER PLACE REVAMPED/b9315be5-bc8e-4a45-bfdd-601f91eb3eaa.jpg" alt="Villa Kitchen"></div>
+        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bedroom 4')"><img src="gallery/THE BETTER PLACE REVAMPED/c9a4bb4e-f18d-4b42-831a-d7589f1a6e4c.jpg" alt="Villa Bedroom 4"></div>
         <!-- Row C: wide + 2 small + wide -->
-        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Terrace Night View')"><img src="gallery/THE BETTER PLACE REVAMPED/d295f8d9-6db5-49c3-9124-19f9f0403827.jpg" alt="Villa · Terrace Night View" style="width:100%; height:100%; object-fit:cover; object-position:center 40%; position:absolute; inset:0; display:block;"><div class="gp-overlay"><span class="gp-overlay-label">Terrace Night</span></div></div>
-        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bedroom 5')"><img src="gallery/THE BETTER PLACE REVAMPED/e19d508a-d93c-4d55-8a8b-58431f8e55c5.jpg" alt="Villa Bedroom 5"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom 5</span></div></div>
-        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bathroom')"><img src="gallery/THE BETTER PLACE REVAMPED/fbf692ac-4c03-4c69-925c-fa624b4949db.jpg" alt="Villa Bathroom"><div class="gp-overlay"><span class="gp-overlay-label">Bathroom</span></div></div>
-        <div class="gp gp-villa wide" onclick="openLightbox(this,'Villa · Exterior')"><img src="gallery/THE BETTER PLACE REVAMPED/ff07b596-98a9-4cce-a9f8-8ce9de0504d6.jpg" alt="Villa Exterior"><div class="gp-overlay"><span class="gp-overlay-label">Exterior</span></div></div>
+        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Terrace Night View')"><img src="gallery/THE BETTER PLACE REVAMPED/d295f8d9-6db5-49c3-9124-19f9f0403827.jpg" alt="Villa · Terrace Night View" style="width:100%; height:100%; object-fit:cover; object-position:center 40%; position:absolute; inset:0; display:block;"></div>
+        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bedroom 5')"><img src="gallery/THE BETTER PLACE REVAMPED/e19d508a-d93c-4d55-8a8b-58431f8e55c5.jpg" alt="Villa Bedroom 5"></div>
+        <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bathroom')"><img src="gallery/THE BETTER PLACE REVAMPED/fbf692ac-4c03-4c69-925c-fa624b4949db.jpg" alt="Villa Bathroom"></div>
+        <div class="gp gp-villa wide" onclick="openLightbox(this,'Villa · Exterior')"><img src="gallery/THE BETTER PLACE REVAMPED/ff07b596-98a9-4cce-a9f8-8ce9de0504d6.jpg" alt="Villa Exterior"></div>
         <!-- Row D: full-width -->
         <div class="gp gp-villa" onclick="openLightbox(this,'Villa · Bathroom')">
           <img src="gallery/THE BETTER PLACE REVAMPED/5817d0b2-de44-4d55-960d-2cc1fc010489.jpg" alt="Villa Bathroom">
-          <div class="gp-overlay"><span class="gp-overlay-label">Bathroom</span></div>
+          
         </div>
       </div>
 
@@ -1626,14 +1626,14 @@ section { padding: 160px 24px !important; }
         <div class="gallery-sub-line"></div>
       </div>
       <div class="gallery-grid g4">
-        <div class="gp gp-ground big" onclick="openLightbox(this,'Ground · Hall')"><img src="gallery/THE BETTER PLACE 2.0/d6890bbf-429a-4190-969a-e3eb17af564f.jpg" alt="Ground Floor Hall"><div class="gp-overlay"><span class="gp-overlay-label">Hall</span></div></div>
-        <div class="gp gp-ground" onclick="openLightbox(this,'Ground · Bedroom 1')"><img src="gallery/THE BETTER PLACE 2.0/1d659263-f5f1-481e-8576-cff8b006b8e9.jpg" alt="Ground Floor Bedroom 1"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom 1</span></div></div>
-        <div class="gp gp-ground" onclick="openLightbox(this,'Ground · Bedroom 2')"><img src="gallery/THE BETTER PLACE 2.0/10aae7a5-593f-48ff-8650-47cec5041006.jpg" alt="Ground Floor Bedroom 2"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom 2</span></div></div>
-        <div class="gp gp-ground tall" onclick="openLightbox(this,'Ground · Kitchen')"><img src="gallery/THE BETTER PLACE 2.0/366cc0da-391d-4a7e-bcd0-3e057aa76b6f.jpg" alt="Ground Floor Kitchen"><div class="gp-overlay"><span class="gp-overlay-label">Kitchen</span></div></div>
-        <div class="gp gp-ground" onclick="openLightbox(this,'Ground · Bedroom 3')"><img src="gallery/THE BETTER PLACE 2.0/573ec7e5-3fc3-4cd9-97cb-e938eb7a9591.jpg" alt="Ground Floor Bedroom 3"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom 3</span></div></div>
-        <div class="gp gp-ground" onclick="openLightbox(this,'Ground · Bathroom')"><img src="gallery/THE BETTER PLACE 2.0/2344b03c-ab0a-4dd4-bad1-6213fe61f82b.jpg" alt="Ground Floor Bathroom"><div class="gp-overlay"><span class="gp-overlay-label">Bathroom</span></div></div>
-        <div class="gp gp-ground" onclick="openLightbox(this,'Ground · Bathroom')"><img src="gallery/THE BETTER PLACE 2.0/bbcb4a72-5984-48fa-bc32-8b95a17040cf.jpg" alt="Ground Floor Bathroom"><div class="gp-overlay"><span class="gp-overlay-label">Bathroom</span></div></div>
-        <div class="gp gp-ground" onclick="openLightbox(this,'Ground · Exterior')"><img src="gallery/THE BETTER PLACE 2.0/c197fede-3b0a-4be3-86e6-36342e263635.jpg" alt="Ground Floor Exterior"><div class="gp-overlay"><span class="gp-overlay-label">Exterior</span></div></div>
+        <div class="gp gp-ground big" onclick="openLightbox(this,'Ground · Hall')"><img src="gallery/THE BETTER PLACE 2.0/d6890bbf-429a-4190-969a-e3eb17af564f.jpg" alt="Ground Floor Hall"></div>
+        <div class="gp gp-ground" onclick="openLightbox(this,'Ground · Bedroom 1')"><img src="gallery/THE BETTER PLACE 2.0/1d659263-f5f1-481e-8576-cff8b006b8e9.jpg" alt="Ground Floor Bedroom 1"></div>
+        <div class="gp gp-ground" onclick="openLightbox(this,'Ground · Bedroom 2')"><img src="gallery/THE BETTER PLACE 2.0/10aae7a5-593f-48ff-8650-47cec5041006.jpg" alt="Ground Floor Bedroom 2"></div>
+        <div class="gp gp-ground tall" onclick="openLightbox(this,'Ground · Kitchen')"><img src="gallery/THE BETTER PLACE 2.0/366cc0da-391d-4a7e-bcd0-3e057aa76b6f.jpg" alt="Ground Floor Kitchen"></div>
+        <div class="gp gp-ground" onclick="openLightbox(this,'Ground · Bedroom 3')"><img src="gallery/THE BETTER PLACE 2.0/573ec7e5-3fc3-4cd9-97cb-e938eb7a9591.jpg" alt="Ground Floor Bedroom 3"></div>
+        <div class="gp gp-ground" onclick="openLightbox(this,'Ground · Bathroom')"><img src="gallery/THE BETTER PLACE 2.0/2344b03c-ab0a-4dd4-bad1-6213fe61f82b.jpg" alt="Ground Floor Bathroom"></div>
+        <div class="gp gp-ground" onclick="openLightbox(this,'Ground · Bathroom')"><img src="gallery/THE BETTER PLACE 2.0/bbcb4a72-5984-48fa-bc32-8b95a17040cf.jpg" alt="Ground Floor Bathroom"></div>
+        <div class="gp gp-ground" onclick="openLightbox(this,'Ground · Exterior')"><img src="gallery/THE BETTER PLACE 2.0/c197fede-3b0a-4be3-86e6-36342e263635.jpg" alt="Ground Floor Exterior"></div>
       </div>
     </div><!-- /gsection-better-place -->
 
@@ -1647,10 +1647,10 @@ section { padding: 160px 24px !important; }
         <div class="gallery-sub-line"></div>
       </div>
       <div class="gallery-grid g4" style="grid-auto-rows:220px;">
-        <div class="gp gp-olive big" onclick="openLightbox(this,'Olive &amp; Orchid')"><img src="gallery/inn%20the%20hills/Olive%20and%20orchid/b19a42fa-3201-4e75-bc5c-81dd4b02004f.jpg" alt="Olive &amp; Orchid" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Olive &amp; Orchid</span></div></div>
-        <div class="gp gp-olive" onclick="openLightbox(this,'Olive &amp; Orchid')"><img src="gallery/inn%20the%20hills/Olive%20and%20orchid/1ab43bc6-4e91-492b-b9a6-514649ed6c5a.jpg" alt="Olive &amp; Orchid" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Room Detail</span></div></div>
-        <div class="gp gp-olive" onclick="openLightbox(this,'Olive &amp; Orchid · Bathroom')"><img src="gallery/inn%20the%20hills/Olive%20and%20orchid/0215bca1-bd6e-43dd-b8b3-e788c50ad907.jpg" alt="Olive &amp; Orchid" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Bathroom</span></div></div>
-        <div class="gp gp-olive" onclick="openLightbox(this,'Olive &amp; Orchid · Kitchen')"><img src="gallery/inn%20the%20hills/Olive%20and%20orchid/270f432c-d171-4920-aa7b-f8a7cbd2c821.jpg" alt="Olive &amp; Orchid" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Kitchen</span></div></div>
+        <div class="gp gp-olive big" onclick="openLightbox(this,'Olive &amp; Orchid')"><img src="gallery/inn%20the%20hills/Olive%20and%20orchid/b19a42fa-3201-4e75-bc5c-81dd4b02004f.jpg" alt="Olive &amp; Orchid" loading="lazy"></div>
+        <div class="gp gp-olive" onclick="openLightbox(this,'Olive &amp; Orchid')"><img src="gallery/inn%20the%20hills/Olive%20and%20orchid/1ab43bc6-4e91-492b-b9a6-514649ed6c5a.jpg" alt="Olive &amp; Orchid" loading="lazy"></div>
+        <div class="gp gp-olive" onclick="openLightbox(this,'Olive &amp; Orchid · Bathroom')"><img src="gallery/inn%20the%20hills/Olive%20and%20orchid/0215bca1-bd6e-43dd-b8b3-e788c50ad907.jpg" alt="Olive &amp; Orchid" loading="lazy"></div>
+        <div class="gp gp-olive" onclick="openLightbox(this,'Olive &amp; Orchid · Kitchen')"><img src="gallery/inn%20the%20hills/Olive%20and%20orchid/270f432c-d171-4920-aa7b-f8a7cbd2c821.jpg" alt="Olive &amp; Orchid" loading="lazy"></div>
       </div>
 
       <!-- Jasper & Juniper -->
@@ -1660,10 +1660,10 @@ section { padding: 160px 24px !important; }
         <div class="gallery-sub-line"></div>
       </div>
       <div class="gallery-grid g4" style="grid-auto-rows:220px;">
-        <div class="gp gp-jasper" onclick="openLightbox(this,'Jasper &amp; Juniper')"><img src="imgs/jasper_1.jpeg" alt="Jasper &amp; Juniper" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Jasper &amp; Juniper</span></div></div>
-        <div class="gp gp-jasper big" onclick="openLightbox(this,'Jasper &amp; Juniper')"><img src="imgs/jasper_2.jpeg" alt="Jasper &amp; Juniper" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Room View</span></div></div>
-        <div class="gp gp-jasper" onclick="openLightbox(this,'Jasper &amp; Juniper · Detail')"><img src="imgs/jasper_3.jpeg" alt="Jasper &amp; Juniper" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Room Detail</span></div></div>
-        <div class="gp gp-jasper" onclick="openLightbox(this,'Jasper &amp; Juniper · Bathroom')"><img src="imgs/jasper_4.jpeg" alt="Jasper &amp; Juniper" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Bathroom</span></div></div>
+        <div class="gp gp-jasper" onclick="openLightbox(this,'Jasper &amp; Juniper')"><img src="imgs/jasper_1.jpeg" alt="Jasper &amp; Juniper" loading="lazy"></div>
+        <div class="gp gp-jasper big" onclick="openLightbox(this,'Jasper &amp; Juniper')"><img src="imgs/jasper_2.jpeg" alt="Jasper &amp; Juniper" loading="lazy"></div>
+        <div class="gp gp-jasper" onclick="openLightbox(this,'Jasper &amp; Juniper · Detail')"><img src="imgs/jasper_3.jpeg" alt="Jasper &amp; Juniper" loading="lazy"></div>
+        <div class="gp gp-jasper" onclick="openLightbox(this,'Jasper &amp; Juniper · Bathroom')"><img src="imgs/jasper_4.jpeg" alt="Jasper &amp; Juniper" loading="lazy"></div>
       </div>
 
       <!-- Scarlet & Sequoia -->
@@ -1673,11 +1673,11 @@ section { padding: 160px 24px !important; }
         <div class="gallery-sub-line"></div>
       </div>
       <div class="gallery-grid g4" style="grid-auto-rows:220px;">
-        <div class="gp gp-scarlet big" onclick="openLightbox(this,'Scarlet &amp; Sequoia · Living')"><img src="imgs/scarlet_1.jpeg" alt="Scarlet &amp; Sequoia" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Living Area</span></div></div>
-        <div class="gp gp-scarlet" onclick="openLightbox(this,'Scarlet &amp; Sequoia')"><img src="imgs/scarlet_2.jpeg" alt="Scarlet &amp; Sequoia" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Room View</span></div></div>
-        <div class="gp gp-scarlet" onclick="openLightbox(this,'Scarlet &amp; Sequoia')"><img src="imgs/scarlet_3.jpeg" alt="Scarlet &amp; Sequoia" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Detail</span></div></div>
-        <div class="gp gp-scarlet wide" onclick="openLightbox(this,'Scarlet &amp; Sequoia · Bedroom')"><img src="imgs/scarlet_4.jpeg" alt="Scarlet &amp; Sequoia" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom</span></div></div>
-        <div class="gp gp-scarlet wide" onclick="openLightbox(this,'Scarlet &amp; Sequoia · Lounge')"><img src="imgs/scarlet_5.jpeg" alt="Scarlet &amp; Sequoia" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Lounge</span></div></div>
+        <div class="gp gp-scarlet big" onclick="openLightbox(this,'Scarlet &amp; Sequoia · Living')"><img src="imgs/scarlet_1.jpeg" alt="Scarlet &amp; Sequoia" loading="lazy"></div>
+        <div class="gp gp-scarlet" onclick="openLightbox(this,'Scarlet &amp; Sequoia')"><img src="imgs/scarlet_2.jpeg" alt="Scarlet &amp; Sequoia" loading="lazy"></div>
+        <div class="gp gp-scarlet" onclick="openLightbox(this,'Scarlet &amp; Sequoia')"><img src="imgs/scarlet_3.jpeg" alt="Scarlet &amp; Sequoia" loading="lazy"></div>
+        <div class="gp gp-scarlet wide" onclick="openLightbox(this,'Scarlet &amp; Sequoia · Bedroom')"><img src="imgs/scarlet_4.jpeg" alt="Scarlet &amp; Sequoia" loading="lazy"></div>
+        <div class="gp gp-scarlet wide" onclick="openLightbox(this,'Scarlet &amp; Sequoia · Lounge')"><img src="imgs/scarlet_5.jpeg" alt="Scarlet &amp; Sequoia" loading="lazy"></div>
       </div>
 
       <!-- Maple & Magnolia -->
@@ -1687,11 +1687,11 @@ section { padding: 160px 24px !important; }
         <div class="gallery-sub-line"></div>
       </div>
       <div class="gallery-grid g4" style="grid-auto-rows:220px;">
-        <div class="gp gp-maple" onclick="openLightbox(this,'Maple &amp; Magnolia')"><img src="imgs/maple_1.jpeg" alt="Maple &amp; Magnolia" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Room View</span></div></div>
-        <div class="gp gp-maple" onclick="openLightbox(this,'Maple &amp; Magnolia')"><img src="imgs/maple_2.jpeg" alt="Maple &amp; Magnolia" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Décor Detail</span></div></div>
-        <div class="gp gp-maple big" onclick="openLightbox(this,'Maple &amp; Magnolia · Lounge')"><img src="imgs/maple_3.jpeg" alt="Maple &amp; Magnolia" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Lounge</span></div></div>
-        <div class="gp gp-maple" onclick="openLightbox(this,'Maple &amp; Magnolia · Bedroom')"><img src="imgs/maple_4.jpeg" alt="Maple &amp; Magnolia" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom</span></div></div>
-        <div class="gp gp-maple" onclick="openLightbox(this,'Maple &amp; Magnolia · Night')"><img src="imgs/maple_5.jpeg" alt="Maple &amp; Magnolia" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Night View</span></div></div>
+        <div class="gp gp-maple" onclick="openLightbox(this,'Maple &amp; Magnolia')"><img src="imgs/maple_1.jpeg" alt="Maple &amp; Magnolia" loading="lazy"></div>
+        <div class="gp gp-maple" onclick="openLightbox(this,'Maple &amp; Magnolia')"><img src="imgs/maple_2.jpeg" alt="Maple &amp; Magnolia" loading="lazy"></div>
+        <div class="gp gp-maple big" onclick="openLightbox(this,'Maple &amp; Magnolia · Lounge')"><img src="imgs/maple_3.jpeg" alt="Maple &amp; Magnolia" loading="lazy"></div>
+        <div class="gp gp-maple" onclick="openLightbox(this,'Maple &amp; Magnolia · Bedroom')"><img src="imgs/maple_4.jpeg" alt="Maple &amp; Magnolia" loading="lazy"></div>
+        <div class="gp gp-maple" onclick="openLightbox(this,'Maple &amp; Magnolia · Night')"><img src="imgs/maple_5.jpeg" alt="Maple &amp; Magnolia" loading="lazy"></div>
       </div>
 
       <!-- Aspen -->
@@ -1701,10 +1701,10 @@ section { padding: 160px 24px !important; }
         <div class="gallery-sub-line"></div>
       </div>
       <div class="gallery-grid g4" style="grid-auto-rows:220px;">
-        <div class="gp gp-aspen big" onclick="openLightbox(this,'Aspen · Room View')"><img src="gallery/inn%20the%20hills/aspen/39a169d3-d0de-413a-8047-1708f23c2824.jpg" alt="Aspen" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Room View</span></div></div>
-        <div class="gp gp-aspen" onclick="openLightbox(this,'Aspen')"><img src="gallery/inn%20the%20hills/aspen/a395fe1f-65ed-44d2-a24e-23eac42cbb55.jpg" alt="Aspen" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Lounge</span></div></div>
-        <div class="gp gp-aspen" onclick="openLightbox(this,'Aspen · Detail')"><img src="gallery/inn%20the%20hills/aspen/d2cd3ad0-fda9-4b79-8642-5cf007a7de94.jpg" alt="Aspen" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Bedroom</span></div></div>
-        <div class="gp gp-aspen wide" onclick="openLightbox(this,'Aspen · Bedroom')"><img src="gallery/inn%20the%20hills/aspen/dd136bde-f286-4eb1-80f6-2d63e636fd50.jpg" alt="Aspen" loading="lazy"><div class="gp-overlay"><span class="gp-overlay-label">Full Room</span></div></div>
+        <div class="gp gp-aspen big" onclick="openLightbox(this,'Aspen · Room View')"><img src="gallery/inn%20the%20hills/aspen/39a169d3-d0de-413a-8047-1708f23c2824.jpg" alt="Aspen" loading="lazy"></div>
+        <div class="gp gp-aspen" onclick="openLightbox(this,'Aspen')"><img src="gallery/inn%20the%20hills/aspen/a395fe1f-65ed-44d2-a24e-23eac42cbb55.jpg" alt="Aspen" loading="lazy"></div>
+        <div class="gp gp-aspen" onclick="openLightbox(this,'Aspen · Detail')"><img src="gallery/inn%20the%20hills/aspen/d2cd3ad0-fda9-4b79-8642-5cf007a7de94.jpg" alt="Aspen" loading="lazy"></div>
+        <div class="gp gp-aspen wide" onclick="openLightbox(this,'Aspen · Bedroom')"><img src="gallery/inn%20the%20hills/aspen/dd136bde-f286-4eb1-80f6-2d63e636fd50.jpg" alt="Aspen" loading="lazy"></div>
       </div>
 
     </div><!-- /gsection-inn-hills -->
