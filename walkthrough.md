@@ -1,20 +1,20 @@
-# Logo Integration & Branding Refresh Walkthrough
+# Walkthrough: Slow Down Hero Slideshow
 
-## Summary
-The "Inn The Hills" official logo has been integrated across all key touchpoints on the website, replacing text-based branding with a more professional and trustworthy image-based identity.
+I have updated the hero slideshow in `index.html` to be more relaxed and smoother.
 
 ## Changes Made
-- **Navbar Branding**: Replaced the "TBP & Inn The Hills" text with the official circular logo. Adjusted height to 48px for perfect visibility and alignment.
-- **Booking Modals**: 
-  - Standardized logo placement at the top center of both the room-specific modal and the general booking tile.
-  - Added consistent 64px circular logo styling with subtle borders.
-- **Footer Integration**: Added the logo to the footer area with a reduced 0.8 opacity to complement the dark theme while maintaining a premium, subtle presence.
-- **Responsive Styling**:
-  - Ensured logos use `object-fit: contain` to preserve their aspect ratio.
-  - Optimized sizes for both desktop and mobile views.
+
+### [index.html](file:///c:/Users/chitr/Downloads/my%20websites/inthehills/index.html)
+
+- **Slideshow Interval**: Increased from 500ms to 2000ms (2 seconds per photo).
+- **Transition Animation**: Increased duration from 0.4s to 0.6s for a smoother transition between slides.
+  - Updated in both CSS (line 1116) and JavaScript (`next()` function at lines 2023, 2027).
+
+### Git & GitHub
+- Staged, committed, and pushed these changes to the master branch.
 
 ## Verification
-- Verified logo rendering in the navbar and footer.
-- Checked both booking modals to ensure centering and spacing.
-- Scaled the browser to confirm mobile responsiveness of the branding.
-- Pushed all updates to GitHub.
+
+The changes are live in the code. To verify:
+1.  Open `index.html` locally.
+2.  Watch the hero slideshow; it should now stay on each image for 2 seconds and transition more slowly.
