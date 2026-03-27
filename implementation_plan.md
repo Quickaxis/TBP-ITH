@@ -1,18 +1,20 @@
-# Logo Integration Implementation Plan
+# Slow Down Hero Slideshow
 
-## Goal Description
-Integrate the official "Inn The Hills" logo into the navbar, booking modals, and footer to enhance branding and professional aesthetic.
+Slow down the hero slideshow interval from 500ms to 2000ms (2 seconds per photo) and smooth out the slide transition animation (0.4s to 0.6s).
 
 ## Proposed Changes
-- **Navbar**: Replace the text-based logo ("TBP & Inn The Hills") with the image logo (`gallery/THE BETTER PLACE REVAMPED/3985d3a7-6f99-4bca-ba2e-3a68ca98d843.jpg`). Set height to ~44px.
-- **Booking Modals**: 
-  - Ensure both the specific room modal and the general booking modal feature the logo at the top center.
-  - Standardize logic: ~60px width, centered, proper padding.
-- **Footer**: Add a subtle version of the logo (reduced opacity) near the copyright/branding area.
-- **CSS**: Add centralized styles for `.logo-img` and modal logo containers to ensure responsiveness and premium alignment.
+
+### [index.html](file:///c:/Users/chitr/Downloads/my%20websites/inthehills/index.html)
+
+#### [MODIFY] [index.html](file:///c:/Users/chitr/Downloads/my%20websites/inthehills/index.html)
+
+- **Slideshow Interval**: Change `setInterval(next, 500);` to `setInterval(next, 2000);` (line 2032).
+- **CSS Transition**: Change `transition: transform 0.4s ...` to `transition: transform 0.6s ...` (line 1116).
+- **JavaScript Transitions**: Update transition durations in the `next()` function (lines 2023 and 2027) from `0.4s` to `0.6s` to match the CSS.
 
 ## Verification Plan
-- Check navbar on desktop and mobile.
-- Open both modals to verify logo placement.
-- Check footer for logo integration.
-- Verify that `object-fit: contain` is used to prevent distortion.
+
+### Manual Verification
+1.  Open `index.html` in the browser.
+2.  Observe the hero slideshow; verify each photo stays for 2 seconds.
+3.  Verify the slide transition is smooth and slightly slower (0.6s) as requested.
